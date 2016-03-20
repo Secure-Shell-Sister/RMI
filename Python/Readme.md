@@ -12,3 +12,11 @@ To run the nameserver simply run:
 pyro4-ns
 ```
 in separate terminal
+
+##Client
+
+The parameter for the client are:
+
+```bash
+client.py [path_to_log_folder] [host1, host2, ...]
+```

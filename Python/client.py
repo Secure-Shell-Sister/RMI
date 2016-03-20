@@ -7,9 +7,12 @@ if __name__ == "__main__":
     log_path = "/home/revant/Documents/SISTER/RPC/NewRPC/var/log"
     if len(sys.argv) > 1:
         log_path = sys.argv[1]
-        print(log_path)
 
-    servers = ["PYRONAME:example.LogParser"]
+    servers = []
+    if len(sys.argv) > 2:
+        for host in sys.argv[2:]:
+            servers.append("PYRONAME:example.LogParser@%s" % host)
+
     proxies = []
     for server in servers:
         proxy = Pyro4.Proxy(server)
